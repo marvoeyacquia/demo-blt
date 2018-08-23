@@ -10,7 +10,6 @@ project:
 git:
   default_branch: develop
   remotes:
-    origin: git@github.com:marvoey/presales-demo.git
     acquia: mopcc@svn-3735.devcloud.hosting.acquia.com:mopcc.git
 drush:
   aliases:
