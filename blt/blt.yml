@@ -1,15 +1,17 @@
 project:
   machine_name: presales-blt
   prefix: BLT
-  human_name: 'BLTed 8'
+  human_name: 'Presales BLT Demo'
   profile:
     name: lightning
   local:
     protocol: http
-    hostname: 'local.${project.machine_name}.com'
+    hostname: 'lc.${project.machine_name}'
 git:
-  default_branch: master
-  remotes: {  }
+  default_branch: develop
+  remotes:
+    origin: git@github.com:marvoey/presales-demo.git
+    acquia: mopcc@svn-3735.devcloud.hosting.acquia.com:mopcc.git
 drush:
   aliases:
     remote: '${project.machine_name}.test'
