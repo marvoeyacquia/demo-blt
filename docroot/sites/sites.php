@@ -1,4 +1,5 @@
 <?php
  $sites = array (
-  'local.blted8.com' => 'default',
+  'lc.presales-blt' => 'default',
+  'acquia-sites.com' => 'default',
 );
