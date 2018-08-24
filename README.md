@@ -1,32 +1,41 @@
-# My Project
-
-A brief description of My Project.
-
-## Using This Template
-
-Remove this section after initial setup!
-
-Search for and replace the following placeholders within this file:
-
-| Placeholder | Example |
-| --- | --- |
-| `#ACQUIA_CLOUD_URL` | https://cloud.acquia.com/app/develop/applications/12345678-1234-1234-12345678901234567 |
-| `#GIT_PRIMARY_DEV_BRANCH` | `master` or `develop` |
-| `#GITHUB_ORG` | The "org" in https://github.com/org/project |
-| `#GITHUB_PROJECT` | The "project" in https://github.com/org/project |
-| `#JIRA_URL` | https://org.atlassian.net/projects/PROJ |
-| `#LOCAL_DEV_SITE_ALIAS` | `@example.local` |
-| `#LOCAL_DEV_URL` | http://local.example.com/ |
-| `#TRAVIS_URL` | https://travis-ci.com/org/PROJ |
-
 ## Getting Started
 
-This project is based on BLT, an open-source project template and tool that enables building, testing, and deploying Drupal installations following Acquia Professional Services best practices. While this is one of many methodologies, it is our recommended methodology. 
+This project is based on BLT, an open-source project template and tool that enables building, testing, and deploying Drupal installations.
 
-1. Review the [Required / Recommended Skills](http://blt.readthedocs.io/en/latest/readme/skills) for working with a BLT project.
-1. Ensure that your computer meets the minimum installation requirements (and then install the required applications). See the [System Requirements](http://blt.readthedocs.io/en/latest/INSTALL/#system-requirements).
-1. Request access to organization that owns the project repo in GitHub (if needed).
-1. Fork the project repository in GitHub.
+### System Requirements
+
+> Also see [BLT Documentation](https://blt.readthedocs.io/en/latest/INSTALL/) for a more detailed explanation.
+
+You must have the following tools on the command line of your host operating system:
+
+- Git
+- Composer
+- PHP 5.6+ (though PHP 7.1+ is recommended)
+- Vagrant
+- Virtual Box
+
+Download and install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+
+Ensure that Xcode is installed (primarily in order to support Homebrew). On OSX 10.9+ you can install Xcode with:
+
+    sudo xcodebuild -license
+    xcode-select --install
+
+Then install the minimum dependencies for BLT. The preferred method is via Homebrew, though you could install these yourself without a package manager.
+
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install php71 git composer
+    composer global require "hirak/prestissimo:^0.3"
+
+The demo uses Drupal VM with BLT, and requires the following additional libraries.
+
+    brew tap caskroom/cask
+    brew cask install virtualbox vagrant
+    vagrant plugin install vagrant-hostsupdater
+
+Instructions for installing all requirements for various operating systems are listed below. In general, make sure all installed tools are the most recent version unless otherwise noted.
+
+1. Fork this project repository in GitHub.
 1. Request access to the Acquia Cloud Environment for your project (if needed).
 1. Setup a SSH key that can be used for GitHub and the Acquia Cloud (you CAN use the same key).
     1. [Setup GitHub SSH Keys](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
@@ -34,6 +43,9 @@ This project is based on BLT, an open-source project template and tool that enab
 1. Clone your forked repository. By default, Git names this "origin" on your local.
     ```
     $ git clone git@github.com:<account>/#GITHUB_PROJECT.git
+    ```
+1. All subsequent steps assume you are in the project directory (`cd #GITHUB_PROJECT`).
+
 1. To ensure that upstream changes to the parent repository may be tracked, add the upstream locally as well.
     ```
     $ git remote add upstream git@github.com:#GITHUB_ORG/#GITHUB_PROJECT.git
@@ -42,51 +54,26 @@ This project is based on BLT, an open-source project template and tool that enab
     ```
     $ composer install
     ```
-1. Setup local environment.
+1. If this is your first time using BLT on this machine, restart your shell so that Bash detects the new BLT alias.
 
-    BLT requires "some sort" of local environment that implements a LAMP stack. While we provide out of the box templates for Drupal VM, if you prefer you can use another tool such as Docker, Docksal, Lando, (other) Vagrant, or your own custom LAMP stack. BLT works with any local environment, however support is limited for these solutions.
-
-    For instructions on setting up Drupal VM, [read our documentation here](http://blt.readthedocs.io/en/9.x/readme/local-development/#using-drupal-vm-for-blt-generated-projects).
-
-1. Run the initial setup:
+1. Customize blt/blt.yml.  Specifically, make sure the machine name is unique:
     ```
-    $ vagrant ssh
-    $ blt setup
+    project:
+         machine_name: presales-blt
+         prefix: BLT
+         human_name: 'Presales BLT Demo'
+         profile:
+           name: lightning
+         local:
+           protocol: http
+           hostname: 'lc.${project.machine_name}'
     ```
-1. Access the site and do necessary work at #LOCAL_DEV_URL by running this:
+1. You will also need to replace the remote url to your appropriate application domain.
     ```
-    $ drush uli
+       git:
+         default_branch: develop
+         remotes:
+           acquia: #YOUR_ACQUIA_CLOUD_DOMAIN
     ```
 
-Additional [BLT documentation](http://blt.readthedocs.io) may be useful. You may also access a list of BLT commands by running this:
-```
-$ blt
-``` 
-
-Note the following properties of this project:
-* Primary development branch: #GIT_PRIMARY_DEV_BRANCH
-* Local environment: #LOCAL_DEV_SITE_ALIAS
-* Local site URL: #LOCAL_DEV_URL
-
-## Working With a BLT Project
-
-BLT projects are designed to instill software development best practices (including git workflows). 
-
-Our BLT Developer documentation includes an [example workflow](http://blt.readthedocs.io/en/latest/readme/dev-workflow/#workflow-example-local-development).
-
-### Important Configuration Files
-
-BLT uses a number of configuration (`.yml` or `.json`) files to define and customize behaviors. Some examples of these are:
-
-* `blt/blt.yml` (formerly blt/project.yml prior to BLT 9.x)
-* `blt/local.blt.yml`
-* `box/config.yml` (if using Drupal VM)
-* `drush/sites` (contains Drush aliases for this project)
-* `composer.json` (includes required components, including Drupal Modules, for this project)
-
-## Resources
-
-* JIRA - #JIRA_URL
-* GitHub - https://github.com/#GITHUB_ORG/#GITHUB_PROJECT
-* Acquia Cloud subscription - #ACQUIA_CLOUD_URL
-* TravisCI - #TRAVIS_URL
+           
