@@ -75,5 +75,24 @@ Instructions for installing all requirements for various operating systems are l
          remotes:
            acquia: #YOUR_ACQUIA_CLOUD_DOMAIN
     ```
+1. make sure that the `box` directory is empty before running the next step.
+1. Run the following command to create a DrupalVM instance:
+    ```
+    blt vm
+    ```
+    choose `[0] geerlingguy/ubuntu1604` for the box to use and then go ahead and boot the VM.
 
-           
+1. To run blt or drush commands against your VM, you must SSH into the VM via `vagrant ssh`.
+
+    > You can actual run commands outside of the VM, but it requires a lot of alias set up.
+    
+1.  Once you ssh into the VM you can run `blt setup` which will install [Lightning](https://github.com/acquia/lightning-project).
+
+1. Now you can set up CI by running `blt recipes:ci:pipelines:init`
+
+1. Ensure that you have entered a value for git.remotes in blt/blt.yml
+
+1. Create and deploy an artifact with `blt artifact:deploy`
+
+1. Run `blt recipes:aliases:init:acquia` to generate your aliases and place them in `drush/sites` directory.
+    

@@ -1,5 +1,5 @@
 project:
-  machine_name: presales-blt
+  machine_name: demo-blt
   prefix: BLT
   human_name: 'Presales BLT Demo'
   profile:
@@ -8,7 +8,7 @@ project:
     protocol: http
     hostname: 'lc.${project.machine_name}'
 git:
-  default_branch: develop
+  default_branch: demo-blt
   remotes:
     acquia: mopcc@svn-3735.devcloud.hosting.acquia.com:mopcc.git
 drush:
