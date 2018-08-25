@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1b1a744d6844d99b4cb938cfa8c6233",
+    "content-hash": "4af8e08c316ab7cd84bb96c2b89e8f2f",
     "packages": [
         {
             "name": "acquia/blt",
-            "version": "9.1.2",
+            "version": "9.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/blt.git",
-                "reference": "5e52325dbbda57b16af97453bf0511b6318c6c9c"
+                "reference": "73af46a2625b2f750af1850b1a9c77c1e5b86b09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/blt/zipball/5e52325dbbda57b16af97453bf0511b6318c6c9c",
-                "reference": "5e52325dbbda57b16af97453bf0511b6318c6c9c",
+                "url": "https://api.github.com/repos/acquia/blt/zipball/73af46a2625b2f750af1850b1a9c77c1e5b86b09",
+                "reference": "73af46a2625b2f750af1850b1a9c77c1e5b86b09",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "template",
                 "testing"
             ],
-            "time": "2018-08-16T23:49:31+00:00"
+            "time": "2018-08-24T20:19:28+00:00"
         },
         {
             "name": "acquia/http-hmac-php",
@@ -1734,16 +1734,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "17896f6d56a2794a1619e019596ae627aabd8fd5"
+                "reference": "af1ec238659a83e320f03e0e454e200f689b4b97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/17896f6d56a2794a1619e019596ae627aabd8fd5",
-                "reference": "17896f6d56a2794a1619e019596ae627aabd8fd5",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/af1ec238659a83e320f03e0e454e200f689b4b97",
+                "reference": "af1ec238659a83e320f03e0e454e200f689b4b97",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1808,7 @@
             "keywords": [
                 "persistence"
             ],
-            "time": "2018-06-14T18:57:48+00:00"
+            "time": "2018-07-12T12:37:50+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -12121,45 +12121,6 @@
                 "scraper"
             ],
             "time": "2018-06-29T15:13:57+00:00"
-        },
-        {
-            "name": "geerlingguy/drupal-vm",
-            "version": "4.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/geerlingguy/drupal-vm.git",
-                "reference": "4fc4a3a89231e8d4cea077e6541c771f1b46d66c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/4fc4a3a89231e8d4cea077e6541c771f1b46d66c",
-                "reference": "4fc4a3a89231e8d4cea077e6541c771f1b46d66c",
-                "shasum": ""
-            },
-            "type": "vm",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oskar Schöldström",
-                    "homepage": "http://oxy.fi"
-                },
-                {
-                    "name": "Jeff Geerling",
-                    "homepage": "https://www.jeffgeerling.com"
-                }
-            ],
-            "description": "A VM for local Drupal development, built with Vagrant + Ansible",
-            "homepage": "https://www.drupalvm.com",
-            "keywords": [
-                "drupal",
-                "vagrant",
-                "virtual machine",
-                "vm"
-            ],
-            "time": "2018-06-01T15:22:24+00:00"
         },
         {
             "name": "instaclick/php-webdriver",

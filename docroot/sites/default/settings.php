@@ -771,10 +771,6 @@ $settings['file_scan_ignore_directories'] = [
  */
 $settings['entity_update_batch_size'] = 50;
 
-if (file_exists('/var/www/site-php')) {
-  require '/var/www/site-php/mopcc/presales_blt-settings.inc';
-}
-
 /**
  * Load local development override configuration, if available.
  *
@@ -790,4 +786,3 @@ if (file_exists('/var/www/site-php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
-$settings['install_profile'] = 'lightning';

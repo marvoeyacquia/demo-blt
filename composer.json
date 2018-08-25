@@ -7,9 +7,7 @@
     "require": {
         "acquia/blt": "^9.1.0"
     },
-    "require-dev": {
-        "geerlingguy/drupal-vm": "^4.8"
-    },
+    "require-dev": {},
     "config": {
         "sort-packages": true
     },

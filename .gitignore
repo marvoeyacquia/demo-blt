@@ -96,8 +96,6 @@ tramp
 
 # User-specific stuff:
 .idea/
-drush-local
-drush/legacy
 
 #XHProf
 xhprof_*

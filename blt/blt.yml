@@ -1,16 +1,15 @@
 project:
-  machine_name: demo-blt
+  machine_name: blt-project-demo
   prefix: BLT
-  human_name: 'Presales BLT Demo'
+  human_name: 'BLTed 8'
   profile:
     name: lightning
   local:
     protocol: http
-    hostname: 'lc.${project.machine_name}'
+    hostname: 'local.${project.machine_name}.com'
 git:
-  default_branch: demo-blt
-  remotes:
-    acquia: mopcc@svn-3735.devcloud.hosting.acquia.com:mopcc.git
+  default_branch: master
+  remotes: {  }
 drush:
   aliases:
     remote: '${project.machine_name}.test'
