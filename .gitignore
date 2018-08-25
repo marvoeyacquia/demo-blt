@@ -134,3 +134,10 @@ drush/sites/.checksums
 
 # Deprecation detector rules
 .rules
+
+# Ignore Drupal VM build files
+Vagrantfile
+box
+drush/sites
+
+
