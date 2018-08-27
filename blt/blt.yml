@@ -1,7 +1,7 @@
 project:
-  machine_name: blt-project-demo
+  machine_name: fork-demo-blt
   prefix: BLT
-  human_name: 'BLTed 8'
+  human_name: 'This is a fork of the presales blt demo repo'
   profile:
     name: lightning
   local:
@@ -10,6 +10,10 @@ project:
 git:
   default_branch: master
   remotes: {  }
+  hooks:
+    pre-commit: false
+    commit-msg: false
+
 drush:
   aliases:
     remote: '${project.machine_name}.test'
