@@ -19,7 +19,7 @@ docroot/sites/*/private
 
 # Ignore contrib modules. These should be created during build process.
 docroot/modules/contrib
-#docroot/themes/contrib
+docroot/themes/contrib
 docroot/profiles/contrib
 docroot/libraries
 drush/Commands
@@ -28,9 +28,6 @@ drush/Commands
 docroot/themes/custom/*/node_modules
 docroot/themes/custom/*/css
 docroot/themes/custom/*/styleguide
-docroot/themes/contrib/*/node_modules
-docroot/themes/contrib/*/css
-docroot/themes/contrib/*/styleguide
 
 # Ignore build artifacts
 deployment_identifier
