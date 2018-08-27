@@ -8,7 +8,7 @@ project:
     protocol: http
     hostname: 'local.${project.machine_name}.com'
 git:
-  default_branch: master
+  default_branch: develop
   remotes:
     acquia: mopcc@svn-3735.devcloud.hosting.acquia.com:mopcc.git
   hooks:
