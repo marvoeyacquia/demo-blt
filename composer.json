@@ -5,8 +5,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "acquia/blt": "^9.1.0",
-        "drupal/bootstrap": "^3.12"
+        "acquia/blt": "^9.1.0"
     },
     "require-dev": {
         "geerlingguy/drupal-vm": "^4.8"
