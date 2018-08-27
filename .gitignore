@@ -8,6 +8,7 @@ tests/behat/local.yml
 box/local.config.yml
 *.local
 local.blt.yml
+insecure_private_key
 
 # Ignore drupal core.
 docroot/core
