@@ -16,7 +16,7 @@ git:
       commit-msg: false
 drush:
   aliases:
-    remote: '${project.machine_name}.test'
+    remote: '${project.machine_name}.dev'
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
@@ -43,11 +43,11 @@ command-hooks:
   # Executed when front end dependencies should be installed.
   frontend-reqs:
     dir: ${repo.root}/blt/scripts
-    command: './install-frontend-reqs.sh'
+    command: null
   # Executed when front end assets should be generated.
   frontend-assets:
     dir: ${docroot}/themes/custom/demo_blt
-    command: sass scss/style.scss css/style.css
+    command: sass scss/style.scss css/style.css # This assumes that sass is already installed on vm
   frontend-test:
     # E.g., ${docroot}/sites/all/themes/custom/mytheme.
     dir: ${docroot}
