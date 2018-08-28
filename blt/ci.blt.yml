@@ -16,7 +16,7 @@ command-hooks:
   # Executed when front end dependencies should be installed.
   frontend-reqs:
     dir: ${repo.root}/blt/scripts
-    command: './install-frontend-reqs.sh'
+    command: ./install-frontend-reqs.sh
   # Executed when front end assets should be generated.
   frontend-assets:
     dir: ${docroot}/themes/custom/demo_blt
