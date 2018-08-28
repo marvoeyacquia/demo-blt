@@ -9,3 +9,49 @@ tests.run-server: true
 # The local.hostname must be set to 127.0.0.1:8888 because we are using drush runserver to test the site.
 project.local.hostname: 127.0.0.1:8888
 drush.debug: false
+
+# Custom tasks that are triggered at pre-defined times in the build process.
+# The tasks hook into BLT's existing commands.
+command-hooks:
+  # Executed when front end dependencies should be installed.
+  frontend-reqs:
+    # E.g., ${docroot}/sites/all/themes/custom/mytheme.
+    dir: ${docroot}/themes/custom/demo_blt
+    # E.g., '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 4.4.4 && npm install'
+    command: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    command: export NVM_DIR="$HOME/.nvm"
+    command: [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    command: nvm install node
+    command: nvm use node
+  # Executed when front end assets should be generated.
+  frontend-assets:
+    # E.g., ${docroot}/sites/all/themes/custom/mytheme.
+    dir: ${docroot}/themes/custom/demo_blt
+    # E.g., '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 4.4.4 && npm build'
+    command: sass scss/style.scss css/style.css
+  frontend-test:
+    # E.g., ${docroot}/sites/all/themes/custom/mytheme.
+    dir: ${docroot}
+    # E.g., `npm test`.
+    command: null
+  pre-commit:
+    # E.g., ${docroot}
+    dir: ${docroot}
+    # E.g., `php -l`.
+    command: null
+  # Executed before configuration is imported.
+  pre-config-import:
+    dir: ${docroot}
+    command: null
+  # Executed after deployment artifact is created.
+  post-deploy-build:
+    dir: '${deploy.dir}/docroot'
+    command: null
+  # Executed after source:build is run.
+  post-setup-build:
+    dir: ${docroot}
+    command: null
+  # Executed after deploy:push-all is run.
+  post-deploy:
+    dir: ${docroot}
+    command: null
