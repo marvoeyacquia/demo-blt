@@ -1,0 +1,14 @@
+uuid: d4f0fa81-4931-4765-af88-433ee3b0890d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.media_creator
+  module:
+    - user
+id: user_add_role_action.media_creator
+label: 'Add the Media creator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: media_creator

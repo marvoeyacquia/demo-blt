@@ -1,0 +1,17 @@
+uuid: 42d1b691-9eb1-49d5-975b-7bb48c1cc2de
+langcode: en
+status: true
+dependencies: {  }
+id: landing_page_reviewer
+label: 'Landing page reviewer'
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'delete any landing_page content'
+  - 'edit any landing_page content'
+  - 'use editorial transition archive'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
+  - 'view any unpublished content'
+  - 'view latest version'
