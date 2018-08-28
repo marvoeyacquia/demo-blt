@@ -15,19 +15,11 @@ drush.debug: false
 command-hooks:
   # Executed when front end dependencies should be installed.
   frontend-reqs:
-    # E.g., ${docroot}/sites/all/themes/custom/mytheme.
-    dir: ${docroot}/themes/custom/demo_blt
-    # E.g., '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 4.4.4 && npm install'
-    command: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-    command: export NVM_DIR="$HOME/.nvm"
-    command: [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    command: nvm install node
-    command: nvm use node
+    dir: ${repo.root}/blt/scripts
+    command: './install-frontend-reqs.sh'
   # Executed when front end assets should be generated.
   frontend-assets:
-    # E.g., ${docroot}/sites/all/themes/custom/mytheme.
     dir: ${docroot}/themes/custom/demo_blt
-    # E.g., '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 4.4.4 && npm build'
     command: sass scss/style.scss css/style.css
   frontend-test:
     # E.g., ${docroot}/sites/all/themes/custom/mytheme.
