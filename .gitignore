@@ -10,6 +10,11 @@ box/local.config.yml
 local.blt.yml
 insecure_private_key
 
+# Ignore nested BLT projects
+blt-project
+nci-blt
+nci-poc
+
 # Ignore drupal core.
 docroot/core
 
