@@ -62,5 +62,3 @@ events:
           type: script
           script:
             - source ${BLT_DIR}/scripts/pipelines/build_artifact
-  pre-closed:
-    steps: { }
