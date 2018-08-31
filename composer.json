@@ -6,6 +6,7 @@
     "prefer-stable": true,
     "require": {
         "acquia/blt": "^9.1.0",
+        "drupal/acquia_connector": "^1.14",
         "drupal/bootstrap": "^3.12"
     },
     "require-dev": {
